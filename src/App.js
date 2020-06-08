@@ -1,19 +1,30 @@
 import React, { Component } from "react"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import "./App.css"
-import NavBar from "./components/NavBar/NavBar"
+import NavBar from "./components/NavBar"
+import Home from "./components/Home"
+import Projects from "./components/Projects"
+import Experience from "./components/Experience"
+import CV from "./components/CV"
+import Contact from "./components/Contact"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Router>
         <NavBar />
-        {console.log("hellow world")}
-        <header className="App-header">
-          <h1>Hi, I'm Sandun</h1>
-        </header>
-      </div>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/home" component={Home} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/xp" component={Experience} />
+            <Route path="/cv" component={CV} />
+            <Route path="/contact" component={Contact} />
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }

@@ -1,18 +1,21 @@
-import React from "react"
+import React, { Component } from "react"
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import "./App.css"
 import NavBar from "./components/NavBar/NavBar"
+import "bootstrap/dist/css/bootstrap.min.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="h1-text">Hi, I'm Sandun</h1>
-      </header>
-      <body className="App-body">
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
         <NavBar />
-      </body>
-    </div>
-  )
+        {console.log("hellow world")}
+        <header className="App-header">
+          <h1>Hi, I'm Sandun</h1>
+        </header>
+      </div>
+    )
+  }
 }
 
 export default App
